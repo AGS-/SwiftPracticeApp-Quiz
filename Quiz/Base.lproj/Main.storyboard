@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +17,61 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prc-pZ-nVb">
+                                <rect key="frame" x="288" y="15" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbW-Fy-ftE">
+                                <rect key="frame" x="251" y="44" width="98" height="30"/>
+                                <state key="normal" title="Next Question"/>
+                                <connections>
+                                    <action selector="showNextQuestion:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sVD-Rh-Mck"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YeB-gd-gtm">
+                                <rect key="frame" x="254" y="318" width="93" height="30"/>
+                                <state key="normal" title="Show Answer"/>
+                                <connections>
+                                    <action selector="showAnswer:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GmM-WS-QGL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S00-5T-NM1">
+                                <rect key="frame" x="288" y="289" width="25" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKe-GL-I3R">
+                                <rect key="frame" x="279" y="15" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S00-5T-NM1" firstAttribute="centerX" secondItem="TbW-Fy-ftE" secondAttribute="centerX" id="7GY-v3-a6W"/>
+                            <constraint firstItem="prc-pZ-nVb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gtg-CI-Hzf"/>
+                            <constraint firstItem="S00-5T-NM1" firstAttribute="top" secondItem="TbW-Fy-ftE" secondAttribute="bottom" constant="215" id="NLV-2u-6CN"/>
+                            <constraint firstItem="YeB-gd-gtm" firstAttribute="top" secondItem="S00-5T-NM1" secondAttribute="bottom" constant="8" id="SO7-u4-tYp"/>
+                            <constraint firstItem="sKe-GL-I3R" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VPG-MY-MxF"/>
+                            <constraint firstItem="YeB-gd-gtm" firstAttribute="centerX" secondItem="TbW-Fy-ftE" secondAttribute="centerX" id="ZfW-qb-pfh"/>
+                            <constraint firstItem="prc-pZ-nVb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="15" id="tPj-HE-bwL"/>
+                            <constraint firstItem="sKe-GL-I3R" firstAttribute="top" secondItem="prc-pZ-nVb" secondAttribute="top" id="x9A-j4-qvU"/>
+                            <constraint firstItem="TbW-Fy-ftE" firstAttribute="top" secondItem="prc-pZ-nVb" secondAttribute="bottom" constant="8" id="xif-s4-fWS"/>
+                            <constraint firstItem="TbW-Fy-ftE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zjG-qV-iVp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="answerLabel" destination="S00-5T-NM1" id="Qex-CB-VBT"/>
+                        <outlet property="currentQuestionLabel" destination="prc-pZ-nVb" id="K3Y-Bq-RZe"/>
+                        <outlet property="currentQuestionLabelCenterXConstraint" destination="Gtg-CI-Hzf" id="ir0-bW-EXw"/>
+                        <outlet property="nextQuestionLabel" destination="sKe-GL-I3R" id="lZM-m1-4R2"/>
+                        <outlet property="nextQuestionLabelCenterXConstraint" destination="VPG-MY-MxF" id="woN-Mo-zyi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
